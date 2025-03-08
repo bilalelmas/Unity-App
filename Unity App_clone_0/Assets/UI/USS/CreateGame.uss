@@ -1,0 +1,107 @@
+VisualElement {
+}
+
+.main-container {
+    background-color: rgb(255, 255, 255);
+}
+
+.back-button {
+    background-color: rgba(0, 0, 0, 0);
+    align-items: auto;
+    width: 40px;
+    justify-content: flex-start;
+    align-self: flex-end;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    top: -45px;
+}
+
+.unity-text-element {
+    -unity-font-definition: url("project://database/Assets/Mirror/Hosting/Edgegap/Editor/Fonts/Src/Spartan/Spartan-Regular.ttf?fileID=12800000&guid=3445f8970e8fa734c96cef5ab98ddd61&type=3#Spartan-Regular");
+    color: rgb(35, 78, 105);
+}
+
+.unity-label {
+    -unity-font-definition: url("project://database/Assets/Mirror/Hosting/Edgegap/Editor/Fonts/Src/Spartan/Spartan-Regular.ttf?fileID=12800000&guid=3445f8970e8fa734c96cef5ab98ddd61&type=3#Spartan-Regular");
+    -unity-font-style: normal;
+    color: rgb(35, 78, 105);
+    width: 100px;
+}
+
+.input-group {
+}
+
+.start-game-button {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    align-items: auto;
+    justify-content: flex-start;
+    align-self: center;
+    align-content: auto;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.unity-button {
+    background-color: rgb(35, 78, 105);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    -unity-font-definition: url("project://database/Assets/Mirror/Hosting/Edgegap/Editor/Fonts/Src/Spartan/Spartan-SemiBold.ttf?fileID=12800000&guid=52c456e5bd94b2b4b9045a79143694e9&type=3#Spartan-SemiBold");
+    -unity-font-style: normal;
+}
+
+.title {
+    -unity-font-definition: url("project://database/Assets/Mirror/Hosting/Edgegap/Editor/Fonts/Src/Spartan/Spartan-SemiBold.ttf?fileID=12800000&guid=52c456e5bd94b2b4b9045a79143694e9&type=3#Spartan-SemiBold");
+    -unity-font-style: bold;
+    font-size: 20px;
+    color: rgb(35, 78, 105);
+    align-items: auto;
+    justify-content: flex-start;
+    align-self: center;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.player-name {
+    width: 200px;
+    height: auto;
+}
+
+.top-bar {
+    width: 50px;
+    align-self: flex-end;
+    align-items: auto;
+    justify-content: flex-start;
+    align-content: auto;
+}
+
+.team-count {
+    width: 200px;
+}
+
+.players-per-team {
+    width: 200px;
+}

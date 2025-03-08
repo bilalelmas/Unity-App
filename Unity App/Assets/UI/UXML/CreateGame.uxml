@@ -1,0 +1,20 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/USS/CreateGame.uss?fileID=7433441132597879392&amp;guid=1028340b55ed2334e9f3598dccd43cf0&amp;type=3#CreateGame" />
+    <engine:VisualElement name="main-container" class="main-container" style="height: 451px;">
+        <engine:Label text="Oyun Kur" name="title" class="title" style="width: auto; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; top: 10px; margin-top: 10px;" />
+        <engine:Button name="back-button" text="⟵" class="back-button" style="width: 50px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px; top: -50px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; align-self: flex-end; align-content: auto;" />
+        <engine:VisualElement name="input-group" class="input-group" style="margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
+            <engine:Label text="Oyuncu İsmi:" />
+            <engine:TextField name="player-name" value="İsminizi girin..." class="player-name" style="align-self: auto; -unity-background-image-tint-color: rgb(255, 255, 255);" />
+        </engine:VisualElement>
+        <engine:VisualElement name="input-group" class="input-group" style="margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
+            <engine:Label text="Takım Sayısı:" />
+            <engine:TextField name="team-count" value="Takım sayısı girin..." class="team-count" />
+        </engine:VisualElement>
+        <engine:VisualElement name="input-group" class="input-group" style="margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
+            <engine:Label text="Takım Oyuncu Sayısı:" />
+            <engine:TextField name="players-per-team" value="Takımdaki oyuncu sayısını girin..." class="players-per-team" style="width: 273px;" />
+        </engine:VisualElement>
+        <engine:Button text="Oyunu Başlat" name="start-game-button" class="start-game-button" />
+    </engine:VisualElement>
+</engine:UXML>
