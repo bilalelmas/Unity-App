@@ -1,4 +1,5 @@
 .unity-text-element {
+    -unity-font-definition: url("project://database/Assets/Mirror/Hosting/Edgegap/Editor/Fonts/Src/Spartan/Spartan-Regular.ttf?fileID=12800000&guid=3445f8970e8fa734c96cef5ab98ddd61&type=3#Spartan-Regular");
 }
 
 .unity-label {
@@ -8,6 +9,7 @@
     margin-top: 50px;
     background-color: rgba(56, 56, 56, 0);
     color: rgb(255, 255, 255);
+    -unity-font-definition: url("project://database/Assets/Mirror/Hosting/Edgegap/Editor/Fonts/Src/Spartan/Spartan-SemiBold.ttf?fileID=12800000&guid=52c456e5bd94b2b4b9045a79143694e9&type=3#Spartan-SemiBold");
 }
 
 .unity-button {
@@ -43,6 +45,9 @@
 
 .main-container {
     background-color: rgb(35, 78, 105);
+    flex-grow: 1;
+    align-items: center;
+    height: 100%;
 }
 
 .button-container {

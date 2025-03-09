@@ -1,8 +1,13 @@
-VisualElement {
+﻿VisualElement {
 }
 
 .main-container {
     background-color: rgb(255, 255, 255);
+    height: 100%;
+    align-items: flex-start;
+    align-self: auto;
+    align-content: flex-start;
+    flex-grow: 1;
 }
 
 .back-button {
@@ -10,7 +15,7 @@ VisualElement {
     align-items: auto;
     width: 40px;
     justify-content: flex-start;
-    align-self: flex-end;
+    align-self: auto;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -27,7 +32,11 @@ VisualElement {
     padding-right: 0;
     padding-bottom: 0;
     padding-left: 0;
-    top: -45px;
+    top: auto;
+    background-image: url("project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-2236324273849735119&guid=405b6c6398be0c449ad6616f66890921&type=3#arrow-left@2x");
+    background-size: 100% 100%;
+    align-content: flex-start;
+    position: relative;
 }
 
 .unity-text-element {
@@ -43,6 +52,8 @@ VisualElement {
 }
 
 .input-group {
+    font-size: 12px;
+    width: auto;
 }
 
 .start-game-button {
@@ -86,7 +97,7 @@ VisualElement {
 }
 
 .player-name {
-    width: 200px;
+    width: auto;
     height: auto;
 }
 
@@ -99,9 +110,14 @@ VisualElement {
 }
 
 .team-count {
-    width: 200px;
+    width: auto;
 }
 
 .players-per-team {
-    width: 200px;
+    width: auto;
+    font-size: 12px;
+}
+
+.back-button:hover {
+    background-color: rgb(0, 0, 0);
 }
