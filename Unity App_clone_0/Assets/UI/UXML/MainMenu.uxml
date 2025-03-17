@@ -1,10 +1,24 @@
-<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:engine="UnityEngine.UIElements" 
+    xmlns:editor="UnityEditor.UIElements" 
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" 
+    editor-extension-mode="False">
+
+    <!-- Stilleri içeri aktar -->
     <Style src="project://database/Assets/UI/USS/MainMenu.uss?fileID=7433441132597879392&amp;guid=2cac98b1ea6487045a855630c90cb511&amp;type=3#MainMenu" />
-    <engine:VisualElement name="main-container" class="main-container" style="height: 100%; align-items: center;">
-        <engine:Label text="Paintball+" name="title" />
-        <engine:VisualElement name="button-container" class="button-container">
-            <engine:Button text="Oyun Kur" name="StartGameButton" />
-            <engine:Button text="Oyuna Katıl" name="JoinGameButton" />
-        </engine:VisualElement>
+
+    <!-- Ana kapsayıcı -->
+    <engine:VisualElement name="main-container" class="main-container">
+        
+        <!-- Başlık -->
+        <engine:Label text="Paintball+" name="title" class="title" />
+        
+        <!-- Butonlar -->
+        <engine:Button text="Oyun Kur" name="StartGameButton" class="button" />
+        <engine:Button text="Oyuna Katıl" name="JoinGameButton" class="button" />
+
     </engine:VisualElement>
+
 </engine:UXML>

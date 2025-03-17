@@ -1,59 +1,33 @@
-.unity-text-element {
-    -unity-font-definition: url("project://database/Assets/Mirror/Hosting/Edgegap/Editor/Fonts/Src/Spartan/Spartan-Regular.ttf?fileID=12800000&guid=3445f8970e8fa734c96cef5ab98ddd61&type=3#Spartan-Regular");
+.main-container {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(147, 194, 207);
 }
 
-.unity-label {
+.title {
+    -unity-font-definition: url("project://database/Library/unity%20default%20resources?fileID=10102&guid=0000000000000000e000000000000000&type=0#LegacyRuntime");
+    -unity-font-style: bold;
+    font-size: 50px;
+    -unity-text-align: upper-center;
+    top: 10%;
+}
+
+.button {
+    background-color: rgb(255, 255, 255);
     font-size: 30px;
     -unity-font-style: bold;
-    -unity-text-align: upper-center;
+    -unity-font-definition: url("project://database/Library/unity%20default%20resources?fileID=10102&guid=0000000000000000e000000000000000&type=0#LegacyRuntime");
+    top: 50%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 80%;
+    height: auto;
     margin-top: 50px;
-    background-color: rgba(56, 56, 56, 0);
-    color: rgb(255, 255, 255);
-    -unity-font-definition: url("project://database/Assets/Mirror/Hosting/Edgegap/Editor/Fonts/Src/Spartan/Spartan-SemiBold.ttf?fileID=12800000&guid=52c456e5bd94b2b4b9045a79143694e9&type=3#Spartan-SemiBold");
-}
-
-.unity-button {
-    font-size: 20px;
-    width: 200px;
-    height: 50px;
-    -unity-text-align: upper-center;
-    align-content: flex-start;
-    margin: 10px auto;
-    display: flex;
-    visibility: visible;
-    overflow: visible;
-    background-image: none;
-    -unity-font-style: normal;
-    -unity-font-definition: url("project://database/Assets/Mirror/Hosting/Edgegap/Editor/Fonts/Src/Spartan/Spartan-SemiBold.ttf?fileID=12800000&guid=52c456e5bd94b2b4b9045a79143694e9&type=3#Spartan-SemiBold");
-    color: rgb(0, 0, 0);
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-top-width: 0;
-    border-right-width: 0;
-    border-bottom-width: 0;
-    border-left-width: 0;
-    background-color: rgb(255, 255, 255);
-    -unity-background-scale-mode: stretch-to-fill;
-}
-
-.unity-button:hover {
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-}
-
-.main-container {
-    background-color: rgb(35, 78, 105);
-    flex-grow: 1;
-    align-items: center;
-    height: 100%;
-}
-
-.button-container {
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    margin-left: 0;
-    border-top-width: 100px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    align-items: stretch;
+    align-self: center;
 }
