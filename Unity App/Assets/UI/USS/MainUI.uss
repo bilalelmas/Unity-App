@@ -1,96 +1,61 @@
 #root {
-    display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: #222;
 }
 
 /* Üst panel */
 #TopPanel {
     width: 100%;
-    height: 40vh; /* Ekran boyutuna göre ayarlanır */
-    min-height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 50%;
 }
 
-/* Ekranlar */
 #ScreenContainer {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     height: 100%;
-    justify-content: space-between;
 }
 
 #Screen1, #Screen2, #Screen3, #Screen4 {
-    width: 48%; /* Küçük ekranlarda 2x2 düzeni korur */
-    height: 48%;
-    min-width: 150px;
-    min-height: 150px;
+    width: 50%;
+    height: 50%;
     background-color: lightgray;
     border: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: clamp(14px, 2vw, 24px); /* Ekran boyutuna göre ölçeklenen yazı */
-}
-
-/* Küçük ekranlarda 1x4 düzenine geçiş */
-@media (max-width: 600px) {
-    #Screen1, #Screen2, #Screen3, #Screen4 {
-        width: 100%;
-        height: 25%;
-    }
 }
 
 /* Alt panel */
 #ControlPanel {
     width: 100%;
-    height: 30vh;
-    min-height: 150px;
+    height: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
     background-color: gray;
 }
 
-/* Butonlar */
 #MicButton, #VolumeButton {
-    width: clamp(50px, 8vw, 80px); /* Küçük ekranda küçülür, büyük ekranda büyür */
-    height: clamp(50px, 8vw, 80px);
-    font-size: clamp(14px, 3vw, 24px);
-    border-radius: 10px;
-    text-align: center;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+}
+
+#StatusLabel {
+    color: blue;
+    font-size: 16px;
+}
+
+#ButtonContainer {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    width: 100%;
     align-items: center;
 }
 
-/* GPS Durum Etiketi */
-#StatusLabel {
-    color: blue;
-    font-size: clamp(14px, 2vw, 20px);
-    font-weight: bold;
-    text-align: center;
-}
-
-/* Buton Konteyneri */
-#ButtonContainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    gap: 10px;
-}
-
 #ButtonContainer ui-button {
-    width: clamp(150px, 20vw, 200px);
+    width: 200px;
     height: 40px;
     margin: 5px;
 }
