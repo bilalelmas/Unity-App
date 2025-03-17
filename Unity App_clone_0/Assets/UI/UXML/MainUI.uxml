@@ -1,0 +1,27 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/USS/MainUI.uss?fileID=7433441132597879392&amp;guid=1afef8ac4ca91bc4b81d9f29a483a96e&amp;type=3#MainUI" />
+    <ui:VisualElement name="root">
+        <ui:VisualElement name="TopPanel">
+            <ui:VisualElement name="ScreenContainer">
+                <ui:VisualElement name="Screen1" />
+                <ui:VisualElement name="Screen2" />
+                <ui:VisualElement name="Screen3" />
+                <ui:VisualElement name="Screen4" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="ControlPanel">
+            <ui:Button name="MicButton" text="🎤" />
+            <ui:Button name="VolumeButton" text="🔊" />
+            <ui:Label name="StatusLabel" text="GPS Kapalı" />
+            <ui:VisualElement name="ButtonContainer">
+                <ui:Button text="Bas Konuş" style="height: 23px; width: 136px;" />
+                <ui:Button text="Sağırlaştır" style="height: 23px; width: 136px;" />
+                <ui:Button text="Harita" style="height: 23px; width: 136px;" />
+                <ui:Button text="Kendini Öldür" style="height: 23px; width: 136px;" />
+                <ui:Button text="Ekran Kapa" style="height: 23px; width: 136px;" />
+                <ui:Button text="GPS" style="height: 23px; width: 136px;" />
+                <ui:Button text="Oyundan Çık" style="height: 23px; width: 136px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
