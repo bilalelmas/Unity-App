@@ -17,24 +17,13 @@ MonoBehaviour:
   m_Subtarget: 0
   m_PlatformId: b9b35072a6f44c2e863f17467ea3dc13
   m_PlatformBuildProfile:
-<<<<<<< Updated upstream
-    rid: 3628017161342812434
-=======
     rid: 8576403326878351593
->>>>>>> Stashed changes
   m_OverrideGlobalSceneList: 1
   m_Scenes:
   - m_enabled: 1
     m_path: Assets/Scenes/SampleScene.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
-<<<<<<< Updated upstream
-    m_Settings: []
-  references:
-    version: 2
-    RefIds:
-    - rid: 3628017161342812434
-=======
     m_Settings:
     - line: '| PlayerSettings:'
     - line: '|   m_ObjectHideFlags: 0'
@@ -858,7 +847,6 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 8576403326878351593
->>>>>>> Stashed changes
       type: {class: AndroidPlatformBuildSettings, ns: UnityEditor.Android, asm: UnityEditor.Android.Extensions}
       data:
         m_Development: 0
