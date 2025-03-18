@@ -3,50 +3,214 @@ using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
-    public UIDocument uiDocument; // UI Document
+    private UIDocument uiDocument;
     public VisualTreeAsset mainMenuUI;  // MainMenu.uxml
     public VisualTreeAsset createGameUI; // CreateGame.uxml
+    public VisualTreeAsset mainGameUI;
+
+    // MainUI için gerekli değişkenler
+    private Button micButton;
+    private Button volumeButton;
+    private Label statusLabel;
+    private bool isMicActive = false;
+    private bool isVolumeActive = true;
+
+    private void Awake()
+    {
+        uiDocument = GetComponent<UIDocument>();
+        if (uiDocument == null)
+        {
+            Debug.LogError("UIDocument component'i bulunamadı!");
+            return;
+        }
+    }
 
     private void Start()
     {
-        ShowMainMenu(); // Açılışta ana menüyü göster
+        // Direkt ShowMainMenu'yü çağır
+        ShowMainMenu();
     }
 
     public void ShowMainMenu()
     {
-        if (uiDocument == null || mainMenuUI == null)
-        {
-            Debug.LogError("UI Document veya MainMenu.uxml eksik!");
-            return;
-        }
+        if (mainMenuUI == null) return;
 
-        // UI temizle ve yeni ekranı ekle
-        uiDocument.rootVisualElement.Clear();
+        // UI'ı temizle ve ana menüyü yükle
+        var root = uiDocument.rootVisualElement;
+        root.Clear(); // Mevcut UI'ı temizle
         var menu = mainMenuUI.Instantiate();
-        uiDocument.rootVisualElement.Add(menu);
+        root.Add(menu);
 
-        // "Oyun Kur" butonunu bağla
-        Button startGameButton = menu.Q<Button>("StartGameButton");
+        var startGameButton = menu.Q<Button>("StartGameButton");
         if (startGameButton != null)
+        {
             startGameButton.clicked += ShowCreateGame;
+        }
     }
 
     public void ShowCreateGame()
     {
-        if (uiDocument == null || createGameUI == null)
+        if (createGameUI == null) return;
+
+        var root = uiDocument.rootVisualElement;
+        root.Clear();
+        var createGame = createGameUI.Instantiate();
+        root.Add(createGame);
+
+        var backButton = createGame.Q<Button>("back-button");
+        if (backButton != null)
         {
-            Debug.LogError("UI Document veya CreateGame.uxml eksik!");
-            return;
+            backButton.clicked += ShowMainMenu;
         }
 
-        // UI temizle ve yeni ekranı ekle
-        uiDocument.rootVisualElement.Clear();
-        var createGame = createGameUI.Instantiate();
-        uiDocument.rootVisualElement.Add(createGame);
+        var playerNameField = createGame.Q<TextField>("player-name");
+        var startButton = createGame.Q<Button>("start-game-button");
 
-        // **Geri dön butonunu bağla**
-        Button backButton = createGame.Q<Button>("back-button");
-        if (backButton != null)
-            backButton.clicked += ShowMainMenu;
+        if (startButton != null && playerNameField != null)
+        {
+            startButton.SetEnabled(false);
+            playerNameField.value = "";
+
+            playerNameField.RegisterValueChangedCallback(evt =>
+            {
+                startButton.SetEnabled(!string.IsNullOrEmpty(evt.newValue.Trim()));
+            });
+
+            startButton.clicked += () => ShowMainGameUI();
+        }
+    }
+
+    public void ShowMainGameUI()
+    {
+        if (mainGameUI == null) return;
+
+        var root = uiDocument.rootVisualElement;
+        root.Clear();
+        var gameUI = mainGameUI.Instantiate();
+        root.Add(gameUI);
+
+        InitializeMainGameUI(gameUI);
+    }
+
+    private void InitializeMainGameUI(VisualElement gameUI)
+    {
+        // Butonları ve label'ı bul
+        micButton = gameUI.Q<Button>("MicButton");
+        volumeButton = gameUI.Q<Button>("VolumeButton");
+        statusLabel = gameUI.Q<Label>("StatusLabel");
+
+        // Butonların başlangıç durumlarını ayarla
+        UpdateMicButtonUI();
+        UpdateVolumeButtonUI();
+
+        // GPS durumu için click event
+        if (statusLabel != null)
+        {
+            statusLabel.RegisterCallback<ClickEvent>(ev =>
+            {
+                statusLabel.text = statusLabel.text == "GPS Kapalı" ? "GPS Açık" : "GPS Kapalı";
+            });
+        }
+
+        // Mikrofon butonu için click event
+        if (micButton != null)
+        {
+            micButton.clicked += () =>
+            {
+                isMicActive = !isMicActive;
+                UpdateMicButtonUI();
+                HandleMicrophoneToggle();
+            };
+        }
+
+        // Ses butonu için click event
+        if (volumeButton != null)
+        {
+            volumeButton.clicked += () =>
+            {
+                isVolumeActive = !isVolumeActive;
+                UpdateVolumeButtonUI();
+                HandleVolumeToggle();
+            };
+        }
+
+        // Diğer butonları bul ve click event'lerini ekle
+        SetupMainGameButtons(gameUI);
+    }
+
+    private void UpdateMicButtonUI()
+    {
+        if (micButton != null)
+        {
+            micButton.text = isMicActive ? "🎤" : "🎤";
+            // İsterseniz mikrofon durumuna göre stil değişikliği yapabilirsiniz
+            // micButton.style.backgroundColor = isMicActive ? Color.red : Color.white;
+        }
+    }
+
+    private void UpdateVolumeButtonUI()
+    {
+        if (volumeButton != null)
+        {
+            volumeButton.text = isVolumeActive ? "🔊" : "🔈";
+            // İsterseniz ses durumuna göre stil değişikliği yapabilirsiniz
+            // volumeButton.style.backgroundColor = isVolumeActive ? Color.green : Color.gray;
+        }
+    }
+
+    private void HandleMicrophoneToggle()
+    {
+        Debug.Log($"Mikrofon {(isMicActive ? "Açıldı" : "Kapatıldı")}");
+        // Burada mikrofon işlemlerini yapabilirsiniz
+    }
+
+    private void HandleVolumeToggle()
+    {
+        Debug.Log($"Ses {(isVolumeActive ? "Açıldı" : "Kapatıldı")}");
+        // Burada ses işlemlerini yapabilirsiniz
+    }
+
+    private void SetupMainGameButtons(VisualElement gameUI)
+    {
+        var buttonContainer = gameUI.Q("ButtonContainer");
+        if (buttonContainer != null)
+        {
+            // Tüm butonları bul
+            var buttons = buttonContainer.Query<Button>().ToList();
+            foreach (var button in buttons)
+            {
+                button.clicked += () => HandleMainGameButtonClick(button.text);
+            }
+        }
+    }
+
+    private void HandleMainGameButtonClick(string buttonText)
+    {
+        switch (buttonText)
+        {
+            case "Bas Konuş":
+                Debug.Log("Bas Konuş aktif");
+                break;
+            case "Sağırlaştır":
+                Debug.Log("Sağırlaştır aktif");
+                break;
+            case "Harita":
+                Debug.Log("Harita açıldı");
+                break;
+            case "Kendini Öldür":
+                Debug.Log("Kendini öldür aktif");
+                break;
+            case "Ekran Kapa":
+                Debug.Log("Ekran kapatıldı");
+                break;
+            case "GPS":
+                Debug.Log("GPS tıklandı");
+                break;
+            case "Oyundan Çık":
+                var root = uiDocument.rootVisualElement;
+                root.Clear(); // Mevcut UI'ı temizle
+                ShowMainMenu(); // Ana menüye dön
+                break;
+        }
     }
 }

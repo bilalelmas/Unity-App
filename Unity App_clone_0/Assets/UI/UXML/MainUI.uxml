@@ -10,17 +10,17 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="ControlPanel">
-            <ui:Button name="MicButton" text="🎤" />
-            <ui:Button name="VolumeButton" text="🔊" />
-            <ui:Label name="StatusLabel" text="GPS Kapalı" />
+            <ui:Button name="MicButton" text="🎤" style="height: 59px; width: 145px; position: absolute; left: 50px;" />
+            <ui:Button name="VolumeButton" text="🔊" style="right: -400px; height: 59px; width: 145px;" />
+            <ui:Label name="StatusLabel" text="GPS Kapalı" style="height: 92px; width: 221px; font-size: 45px;" />
             <ui:VisualElement name="ButtonContainer">
-                <ui:Button text="Bas Konuş" style="height: 23px; width: 136px;" />
-                <ui:Button text="Sağırlaştır" style="height: 23px; width: 136px;" />
-                <ui:Button text="Harita" style="height: 23px; width: 136px;" />
-                <ui:Button text="Kendini Öldür" style="height: 23px; width: 136px;" />
-                <ui:Button text="Ekran Kapa" style="height: 23px; width: 136px;" />
-                <ui:Button text="GPS" style="height: 23px; width: 136px;" />
-                <ui:Button text="Oyundan Çık" style="height: 23px; width: 136px;" />
+                <ui:Button text="Bas Konuş" style="height: 120px; width: 713px; font-size: 45px;" />
+                <ui:Button text="Sağırlaştır" style="height: 120px; width: 713px; font-size: 45px;" />
+                <ui:Button text="Harita" style="height: 120px; width: 713px; font-size: 45px;" />
+                <ui:Button text="Kendini Öldür" style="height: 120px; width: 713px; font-size: 45px;" />
+                <ui:Button text="Ekran Kapa" style="height: 120px; width: 713px; font-size: 45px;" />
+                <ui:Button text="GPS" style="height: 120px; width: 713px; font-size: 45px;" />
+                <ui:Button text="Oyundan Çık" style="height: 120px; width: 713px; font-size: 45px;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
