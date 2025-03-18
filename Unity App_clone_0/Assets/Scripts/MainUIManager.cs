@@ -3,11 +3,24 @@ using UnityEngine.UIElements;
 
 public class MainUI : MonoBehaviour
 {
-    public UIDocument uiDocument;
+    private UIDocument uiDocument;
+
+    private void Awake()
+    {
+        // UIDocument component'ini otomatik al
+        uiDocument = GetComponent<UIDocument>();
+        if (uiDocument == null)
+        {
+            Debug.LogError("MainUI GameObject'inde UIDocument component'i bulunamadı!");
+        }
+    }
 
     private void OnEnable()
     {
+        if (uiDocument == null) return; // UIDocument yoksa çık
+
         var root = uiDocument.rootVisualElement;
+        if (root == null) return; // Root element yoksa çık
 
         // Butonları tanımla
         Button micButton = root.Q<Button>("MicButton");
@@ -15,21 +28,30 @@ public class MainUI : MonoBehaviour
         Label statusLabel = root.Q<Label>("StatusLabel");
 
         // GPS yazısına tıklanınca değiştirme
-        statusLabel.RegisterCallback<ClickEvent>(ev =>
+        if (statusLabel != null)
         {
-            statusLabel.text = statusLabel.text == "GPS Kapalı" ? "GPS Açık" : "GPS Kapalı";
-        });
+            statusLabel.RegisterCallback<ClickEvent>(ev =>
+            {
+                statusLabel.text = statusLabel.text == "GPS Kapalı" ? "GPS Açık" : "GPS Kapalı";
+            });
+        }
 
         // Ses butonu
-        volumeButton.clicked += () =>
+        if (volumeButton != null)
         {
-            Debug.Log("Ses butonuna tıklandı!");
-        };
+            volumeButton.clicked += () =>
+            {
+                Debug.Log("Ses butonuna tıklandı!");
+            };
+        }
 
         // Mikrofon butonu
-        micButton.clicked += () =>
+        if (micButton != null)
         {
-            Debug.Log("Mikrofon butonuna tıklandı!");
-        };
+            micButton.clicked += () =>
+            {
+                Debug.Log("Mikrofon butonuna tıklandı!");
+            };
+        }
     }
 }
