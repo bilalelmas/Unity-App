@@ -10,8 +10,8 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="ControlPanel">
-            <ui:Button name="MicButton" text="🎤" style="height: 59px; width: 145px; position: absolute; left: 50px;" />
-            <ui:Button name="VolumeButton" text="🔊" style="right: -400px; height: 59px; width: 145px;" />
+            <ui:Button name="MicButton" style="height: 83px; width: 171px; position: absolute; left: 50px; background-image: url(&quot;project://database/Assets/UI/Images/pngegg%20(1).png?fileID=2800000&amp;guid=1d9633047a9ced7449b5b8a9ff197515&amp;type=3#pngegg (1)&quot;); background-color: rgb(128, 128, 128);" />
+            <ui:Button name="VolumeButton" style="right: -350px; height: 100px; width: 185px; background-image: url(&quot;project://database/Assets/UI/Images/pngegg.png?fileID=2800000&amp;guid=e80455230902e604198885cfb057b1fc&amp;type=3#pngegg&quot;); background-color: rgb(128, 128, 128);" />
             <ui:Label name="StatusLabel" text="GPS Kapalı" style="height: 92px; width: 221px; font-size: 45px;" />
             <ui:VisualElement name="ButtonContainer">
                 <ui:Button text="Bas Konuş" style="height: 120px; width: 713px; font-size: 45px;" />
